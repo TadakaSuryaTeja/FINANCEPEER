@@ -46,3 +46,9 @@ After logging in, the user will be navigated to the upload page. The user will b
 ```sh
 (venv)$ python setup.py bdist_wheel
 ```
+
+### To run unittest 
+
+```sh
+(venv)$ python manage.py test customerapp.tests
+```
