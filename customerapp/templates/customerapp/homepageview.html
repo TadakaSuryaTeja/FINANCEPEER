@@ -6,26 +6,23 @@
              Hi, Im Tadaka Surya Teja.
         </h1>
         <h1>
-          <div class="typewrite" data-period="2000" data-type='["I am a Creative Developer", "I Love Design.", "I Love to play With Cool Stuff." ]'>
+          <div class="typewrite" data-period="2000" data-type='["I am a Full Stack Developer", "I Love Designing", "I Love building cool stuff" ]'>
           </div>
         </h1>
         <p class="lead text-muted">I am a software engineer based in Hyderabad, India. I am a self-taught programmer, and I am passionate about learning new technologies and building cool stuff. I love to solve problems and I am always open to learn new things.</p>
         <p>
 
             {% if request.session.customer %}
-                <form id="id_file" method="POST">
-                    {% csrf_token %}
-                     {{ form.file.errors }}
-                     {{ form.file }}
-                    <button class="btn btn-info my-2" type="submit">Upload</button>
+               <form method="post" action='/uploadfile' enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="uploadedfile">
+                <button type="submit">Upload File</button>
                 </form>
               <a class="btn btn-info my-2" href="/logout">Logout<span class="sr-only">(current)</span></a>
-
             {% else %}
 
               <a href="{% url 'signup' %}" class="btn btn-info my-2">Signup<span class="sr-only">(current)</span></a>
               <a href="{% url 'login' %}" class="btn btn-primary my-2">Login<span class="sr-only">(current)</span></a>
-
 
             {% endif %}
        </p>
